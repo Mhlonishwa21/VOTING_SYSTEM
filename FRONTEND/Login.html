@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            #Login {
+                min-height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 70px 20px 0;
+            }
+
+            #details {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                padding: 35px;
+                background-color: rgba(48, 42, 226, 0.88);
+                border: 2px solid #d2d26c;
+                border-radius: 15px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
+
+
+            #details h1 {
+                text-align: center;
+                color: antiquewhite;
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            #details .subtitle {
+                text-align: center;
+                color: antiquewhite;
+                font-size: 15px;
+                margin: 0 0 25px;
+            }
+
+            #details label {
+                display: block;
+                color: antiquewhite;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            #details input {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 12px;
+                background-color: rgba(255, 255, 255, 0.92);
+                color: #0b142b;
+                border: 1px solid #4b1111;
+                border-radius: 7px;
+                font-size: 15px;
+                margin-bottom: 20px;
+                outline: none;
+            }
+
+            #details input:focus {
+                border: 2px solid antiquewhite;
+            }
+
+            #details .login-button {
+                width: 100%;
+                padding: 13px;
+                background-color: #e6e610;
+                color: antiquewhite;
+                border: 1px solid antiquewhite;
+                border-radius: 7px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            #details .login-button:hover {
+                background-color: #e7e714;
+            }
+
+            #details .register {
+                text-align: center;
+                color: antiquewhite;
+                font-size: 14px;
+                margin: 20px 0 0;
+            }
+
+            #details .register a {
+                color: antiquewhite;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+
+            #details .register a:hover {
+                color: #ffffff;
+            }
+            body {
+                margin: 0;
+                min-height: 100vh;
+                background-image: url("back.webp");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="Login">
+            <div id="details">
+
+                <h1>Welcome Back</h1>
+
+                <p class="subtitle">
+                    Sign in to continue to your account
+                </p>
+
+                <form>
+                    <div>
+                        <label for="Username">Username</label>
+                        <input
+                            type="text"
+                            id="Username"
+                            name="Username"
+                            placeholder="Enter your username"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Log In
+                    </button>
+                </form>
+
+                <p class="register">
+                    Don't have an account?
+                    <a href="Register.html">Register</a>
+                </p>
+
+            </div>
+        </section>
+    </body>
+</html>

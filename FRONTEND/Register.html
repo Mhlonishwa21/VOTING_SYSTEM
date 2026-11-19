@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Vote For Change</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: 'Segoe UI', Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    rgba(16, 13, 72, 0.45),
+                    rgba(16, 13, 72, 0.45)
+                ),
+                url("back.webp") center / cover no-repeat fixed;
+        }
+
+        /* Registration form */
+        .register-container {
+            width: 100%;
+            max-width: 520px;
+            padding: 38px 40px;
+
+            background: rgba(35, 39, 207, 0.94);
+            border: 2px solid #d5d56d;
+            border-radius: 18px;
+
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+            color: white;
+        }
+
+        .register-container h1 {
+            text-align: center;
+            font-size: 34px;
+            margin: 0 0 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 15px;
+            margin: 0 0 30px;
+            color: #e2e8f0;
+        }
+
+        /* Input fields */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            height: 48px;
+            padding: 12px 14px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            background: #f1f1ff;
+            color: #1e293b;
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d5d56d;
+            box-shadow: 0 0 0 3px rgba(213, 213, 109, 0.25);
+        }
+
+        /* First and middle name */
+        .name-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Register button */
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 8px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #d5d56d;
+            color: #100d48;
+
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .register-btn:hover {
+            background: #eeee91;
+            transform: translateY(-2px);
+        }
+
+        .register-btn:disabled {
+            opacity: 0.65;
+            cursor: wait;
+        }
+
+        /* Login link */
+        .login-link {
+            text-align: center;
+            margin: 22px 0 0;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #ffffa0;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        #message {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #message:empty {
+            display: none;
+        }
+
+        /* Mobile screens */
+        @media (max-width: 550px) {
+            .register-container {
+                padding: 28px 22px;
+            }
+
+            .name-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .register-container h1 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <h1>Create Account</h1>
+        <p class="subtitle">Register to make your voice heard</p>
+
+        <form id="registerForm">
+
+            <div class="name-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName"
+                           placeholder="First name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName"
+                           placeholder="Optional">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName"
+                       placeholder="Enter your last name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idNumber">South African ID Number</label>
+                <input
+                    type="text"
+                    id="idNumber"
+                    name="idNumber"
+                    placeholder="Enter your 13-digit SA ID number"
+                    minlength="13"
+                    maxlength="13"
+                    pattern="[0-9]{13}"
+                    inputmode="numeric"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ward">Select Your Ward</label>
+                <select id="ward" required>
+                    <option value="">-- Select your ward --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password"
+                       placeholder="Create a password"
+                       minlength="8" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword"
+                       placeholder="Confirm your password" required>
+            </div>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <button type="submit" class="register-btn">
+                Register
+            </button>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="Login.html">Log In</a>
+            </p>
+
+        </form>
+    </div>
+
+    <script src="Register.js"></script>
+
+</body>
+</html>
