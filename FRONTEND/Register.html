@@ -1,168 +1,368 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Vote For Change</title>
+    <title>Register | Khetha Online</title>
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
+/* =========================================
+   KHETHA ONLINE - REGISTER PAGE
+   White & Royal Blue Theme
+   ========================================= */
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            padding: 40px 20px;
+:root {
+    --primary: #173f91;
+    --primary-dark: #102e70;
+    --primary-light: #eaf1fc;
+    --white: #ffffff;
+    --background: #f4f7fb;
+    --text-dark: #182b49;
+    --text-muted: #58677d;
+    --border: #dce5f2;
+    --gold: #e8b83d;
+}
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+/* =========================================
+   GLOBAL STYLING
+   ========================================= */
 
-            font-family: 'Segoe UI', Arial, sans-serif;
+* {
+    box-sizing: border-box;
+}
 
-            background:
-                linear-gradient(
-                    rgba(16, 13, 72, 0.45),
-                    rgba(16, 13, 72, 0.45)
-                ),
-                url("back.webp") center / cover no-repeat fixed;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 50px 20px;
 
-        /* Registration form */
-        .register-container {
-            width: 100%;
-            max-width: 520px;
-            padding: 38px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            background: rgba(35, 39, 207, 0.94);
-            border: 2px solid #d5d56d;
-            border-radius: 18px;
+    font-family: 'Segoe UI', Arial, sans-serif;
 
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-            color: white;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f4f7fb 50%,
+            #eaf1fc 100%
+        );
 
-        .register-container h1 {
-            text-align: center;
-            font-size: 34px;
-            margin: 0 0 8px;
-        }
+    color: var(--text-dark);
+}
 
-        .subtitle {
-            text-align: center;
-            font-size: 15px;
-            margin: 0 0 30px;
-            color: #e2e8f0;
-        }
+/* =========================================
+   REGISTRATION CONTAINER
+   ========================================= */
 
-        /* Input fields */
-        .form-group {
-            margin-bottom: 18px;
-        }
+.register-container {
+    width: 100%;
+    max-width: 520px;
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 15px;
-        }
+    padding: 42px 40px;
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            height: 48px;
-            padding: 12px 14px;
+    background: var(--white);
 
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
 
-            background: #f1f1ff;
-            color: #1e293b;
-            font-size: 15px;
-        }
+    box-shadow:
+        0 12px 40px rgba(16, 46, 112, 0.09),
+        0 3px 10px rgba(16, 46, 112, 0.03);
 
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #d5d56d;
-            box-shadow: 0 0 0 3px rgba(213, 213, 109, 0.25);
-        }
+    color: var(--text-dark);
+}
 
-        /* First and middle name */
-        .name-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+/* =========================================
+   REGISTRATION HEADING
+   ========================================= */
 
-        /* Register button */
-        .register-btn {
-            width: 100%;
-            padding: 15px;
-            margin-top: 8px;
+.register-container h1 {
+    text-align: center;
 
-            border: none;
-            border-radius: 8px;
+    color: var(--primary-dark);
 
-            background: #d5d56d;
-            color: #100d48;
+    font-size: 34px;
+    font-weight: 750;
 
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
+    margin: 0 0 12px;
+}
 
-            transition: background 0.3s, transform 0.3s;
-        }
+/* Small gold underline */
 
-        .register-btn:hover {
-            background: #eeee91;
-            transform: translateY(-2px);
-        }
+.register-container h1::after {
+    content: "";
+    display: block;
 
-        .register-btn:disabled {
-            opacity: 0.65;
-            cursor: wait;
-        }
+    width: 55px;
+    height: 4px;
 
-        /* Login link */
-        .login-link {
-            text-align: center;
-            margin: 22px 0 0;
-            font-size: 14px;
-        }
+    background: var(--gold);
+    border-radius: 5px;
 
-        .login-link a {
-            color: #ffffa0;
-            font-weight: bold;
-            text-decoration: underline;
-        }
+    margin: 15px auto 0;
+}
 
-        #message {
-            text-align: center;
-            font-size: 14px;
-        }
+/* Subtitle */
 
-        #message:empty {
-            display: none;
-        }
+.subtitle {
+    text-align: center;
 
-        /* Mobile screens */
-        @media (max-width: 550px) {
-            .register-container {
-                padding: 28px 22px;
-            }
+    color: var(--text-muted);
 
-            .name-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
+    font-size: 15px;
+    line-height: 1.7;
 
-            .register-container h1 {
-                font-size: 28px;
-            }
-        }
+    margin: 0 0 32px;
+}
+
+/* =========================================
+   FORM GROUPS
+   ========================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-dark);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================================
+   INPUT FIELDS
+   ========================================= */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 48px;
+
+    padding: 12px 14px;
+
+    background: #f9fbff;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* Input placeholders */
+
+.form-group input::placeholder {
+    color: #9aa8bb;
+}
+
+/* Input hover */
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #a8c2eb;
+}
+
+/* Input focus */
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+
+    background: var(--white);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(23, 63, 145, 0.10);
+}
+
+/* Dropdown styling */
+
+.form-group select {
+    cursor: pointer;
+}
+
+/* =========================================
+   FIRST AND MIDDLE NAME ROW
+   ========================================= */
+
+.name-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+/* =========================================
+   REGISTER BUTTON
+   ========================================= */
+
+.register-btn {
+    width: 100%;
+
+    padding: 15px;
+    margin-top: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Register button hover */
+
+.register-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(23, 63, 145, 0.18);
+}
+
+/* Register button active */
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+/* Disabled button */
+
+.register-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================================
+   LOGIN LINK
+   ========================================= */
+
+.login-link {
+    text-align: center;
+
+    margin: 25px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+/* Login hyperlink */
+
+.login-link a {
+    color: var(--primary);
+
+    font-weight: 650;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* =========================================
+   FORM MESSAGES
+   ========================================= */
+
+#message {
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-top: 15px;
+}
+
+#message:empty {
+    display: none;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 550px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .register-container {
+        padding: 30px 24px;
+        border-radius: 12px;
+    }
+
+    .register-container h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 46px;
+    }
+
+    .register-btn {
+        font-size: 15px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
 
     </style>
 </head>
