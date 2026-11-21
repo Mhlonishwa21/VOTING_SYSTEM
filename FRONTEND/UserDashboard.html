@@ -1,9 +1,134 @@
-<!DOCTYPE html>
-<html>
-    <head>
 
-    </head>
-    <body>
-        
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khetha Online | User Dashboard</title>
+
+<link rel="stylesheet" href="User.css">
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+    <img src="C:\Users\mhlon\Desktop\VOTING_SYSTEM\7734391f-c074-402c-a9ac-80c428280c14.png">
+    </div>
+
+    <div class="profile">
+        <span>My Account</span>
+        <div class="avatar">👤</div>
+    </div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#voting">Cast Vote</a>
+        <a href="#parties">Political Parties</a>
+        <a href="#results">Election Results</a>
+        <a href="#account">My Account</a>
+        <a href="Login.html" class="logout">↪ Logout</a>
+    </aside>
+
+    <main>
+
+        <section id="dashboard">
+            <div class="welcome">
+                <h1>Welcome to Khetha Online</h1>
+                <p>
+                    Your voice matters. Stay informed and
+                    participate in your community's future.
+                </p>
+            </div>
+
+            <h2 class="section-title">My Voting Overview</h2>
+
+            <div class="cards">
+                <div class="card blue">
+                    <div class="card-icon"></div>
+                    <h3>Voting Status</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card teal">
+                    <div class="card-icon"></div>
+                    <h3>My Municipality</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card gold">
+                    <div class="card-icon"></div>
+                    <h3>Current Election</h3>
+                    <p>--</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="voting" class="panel">
+            <h2>Cast Your Vote</h2>
+            <p>
+                When an election is open, you will be able
+                to select your preferred political party here.
+            </p>
+            <span class="btn">Voting Area</span>
+        </section>
+
+        <section id="parties" class="panel">
+            <h2>Political Parties</h2>
+            <p>
+                View the political parties participating
+                in community elections.
+            </p>
+            <div class="info-box">
+                <strong>Available Parties</strong>
+                <span>--</span>
+            </div>
+        </section>
+
+        <section id="results" class="panel">
+            <h2>Election Results</h2>
+            <p>
+                Follow election results and see how your
+                community has participated.
+            </p>
+            <div class="info-box">
+                <strong>Published Results</strong>
+                <span>--</span>
+            </div>
+        </section>
+
+        <section id="account" class="panel">
+            <h2>My Account</h2>
+            <p>Your personal and registration information.</p>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <strong>Full Name</strong>
+                    <span>--</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>Email Address</strong>
+                    <span>--</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>Municipality</strong>
+                    <span>--</span>
+                </div>
+
+                <div class="info-box">
+                    <strong>Account Status</strong>
+                    <span>--</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
 </html>

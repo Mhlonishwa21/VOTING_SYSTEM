@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khetha Online | Admin Dashboard</title>
+
+<link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <img src="C:\Users\mhlon\Desktop\VOTING_SYSTEM\7734391f-c074-402c-a9ac-80c428280c14.png">
+    </div>
+    <div class="admin-label">Administrator</div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#elections">Manage Elections</a>
+        <a href="#parties">Political Parties</a>
+        <a href="#voters">Registered Voters</a>
+        <a href="#municipalities">Municipalities</a>
+        <a href="#statistics">Voting Statistics</a>
+        <a href="#reports">Reports</a>
+        <a href="#settings">Settings</a>
+        <a href="Login.html" class="logout">↪ Logout</a>
+    </aside>
+
+    <main>
+
+        <section id="dashboard">
+            <div class="welcome">
+                <h1>Admin Dashboard</h1>
+                <p>
+                    Manage elections, political parties,
+                    voters and community voting information.
+                </p>
+            </div>
+
+            <h2 class="section-title">System Overview</h2>
+
+            <div class="cards">
+                <div class="card blue">
+                    <div class="card-icon"></div>
+                    <h3>Registered Voters</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card teal">
+                    <div class="card-icon"></div>
+                    <h3>Political Parties</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card gold">
+                    <div class="card-icon"></div>
+                    <h3>Active Elections</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card purple">
+                    <div class="card-icon"></div>
+                    <h3>Total Votes Cast</h3>
+                    <p>--</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="elections" class="panel">
+            <h2>Manage Elections</h2>
+            <p>Create, schedule and manage community elections.</p>
+
+            <span class="btn">+ Create Election</span>
+
+            <div class="table-wrap">
+                <table class="placeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Election</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="parties" class="panel">
+            <h2>Political Parties</h2>
+            <p>Add and manage political parties participating in elections.</p>
+
+            <span class="btn">+ Add Political Party</span>
+
+            <div class="table-wrap">
+                <table class="placeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Party Name</th>
+                            <th>Abbreviation</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="voters" class="panel">
+            <h2>Registered Voters</h2>
+            <p>View and manage registered voter accounts.</p>
+
+            <div class="table-wrap">
+                <table class="placeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Municipality</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="municipalities" class="panel">
+            <h2>Municipalities</h2>
+            <p>View municipalities supported by the platform.</p>
+
+            <div class="table-wrap">
+                <table class="placeholder-table">
+                    <thead>
+                        <tr>
+                            <th>Municipality</th>
+                            <th>District</th>
+                            <th>Province</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--</td>
+                            <td>--</td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="statistics" class="panel">
+            <h2>Voting Statistics</h2>
+            <p>
+                Monitor election participation and
+                overall voting activity.
+            </p>
+
+            <div class="cards">
+                <div class="card blue">
+                    <h3>Registered Voters</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card teal">
+                    <h3>Votes Cast</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card gold">
+                    <h3>Participation Rate</h3>
+                    <p>--</p>
+                </div>
+
+                <div class="card purple">
+                    <h3>Municipalities</h3>
+                    <p>--</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reports" class="panel">
+            <h2>Reports</h2>
+            <p>
+                View election summaries, voting statistics
+                and participation reports.
+            </p>
+
+            <div class="actions">
+                <div class="action-card">
+                    <h3>Election Report</h3>
+                    <p>Overview of election results.</p>
+                    <span class="btn">View Report</span>
+                </div>
+
+                <div class="action-card">
+                    <h3>Voter Report</h3>
+                    <p>Summary of registered voters.</p>
+                    <span class="btn">View Report</span>
+                </div>
+
+                <div class="action-card">
+                    <h3>Participation Report</h3>
+                    <p>Overview of voting participation.</p>
+                    <span class="btn">View Report</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="settings" class="panel">
+            <h2>Settings</h2>
+            <p>Manage administrator account settings.</p>
+
+            <div class="action-card">
+                <h3>Account Security</h3>
+                <p>Update your administrator password.</p>
+                <span class="btn">Change Password</span>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
