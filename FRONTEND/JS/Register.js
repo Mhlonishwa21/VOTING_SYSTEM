@@ -1,8 +1,10 @@
-const registerForm = document.getElementById("Register");
+const registerForm = document.getElementById("registerForm");
 
 registerForm.addEventListener("submit", async function(event){
 
     event.preventDefault();
+
+    console.log("Clicked @@@@@");
 
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
@@ -14,6 +16,10 @@ registerForm.addEventListener("submit", async function(event){
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
+    if (!isValidPassword(password)){
+        alert("Password must contain at least 8 characters, 1 special character, 1 digit and 1 uppercase letter");
+        return;
+    }
     if (password !== confirmPassword){
         alert("Passwords do not match");
         return;
@@ -96,4 +102,25 @@ function isValidID(idNumber) {
     }
 
     return sum % 10 === 0;
+}
+
+function isValidPassword(password) {
+
+    if (password.length < 8) {
+        return false;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>_\-+=;'/\\[\]`~]/.test(password)) {
+        return false;
+    }
+
+    if (!/[0-9]/.test(password)) {
+        return false;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        return false;
+    }
+
+    return true;
 }
