@@ -1,41 +1,40 @@
+
 const registerForm = document.getElementById("registerForm");
 
-registerForm.addEventListener("submit", async function(event){
+registerForm.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-    console.log("Clicked @@@@@");
-
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
-    const middleName = document.getElementById("middleName").value;
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const middleName = document.getElementById("middleName").value.trim();
     const email = document.getElementById("email").value.trim();
-    const idNumber = document.getElementById("idNumber").value;
+    const idNumber = document.getElementById("idNumber").value.trim();
     const gender = document.getElementById("gender").value;
     const municipality = document.getElementById("municipality").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (!isValidPassword(password)){
-        alert("Password must contain at least 8 characters, 1 special character, 1 digit and 1 uppercase letter");
+    if (!isValidPassword(password)) {
+        alert("Password must contain at least 8 characters, 1 special character, 1 digit and 1 uppercase letter.");
         return;
     }
-    if (password !== confirmPassword){
-        alert("Passwords do not match");
-        return;
-    }
-
-    if (!isValidEmail(email)){
-        alert("Invalid email format");
+ch
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
         return;
     }
 
-    if (!isValidID(idNumber)){
-        alert("Invalid South African ID number");
+    if (!isValidEmail(email)) {
+        alert("Invalid email format!");
         return;
     }
 
-    try{
+    if (!isValidID(idNumber)) {
+        alert("Invalid South African ID number!");
+        return;
+    }
+    try {
         const response = await fetch("http://localhost:3000/api/auth/register", {
             method: "POST",
 
@@ -44,24 +43,37 @@ registerForm.addEventListener("submit", async function(event){
             },
 
             body: JSON.stringify({
-                firstName: firstName,
-                middleName: middleName,
-                lastName: lastName,
-                email: email,
-                idNumber: idNumber,
-                gender: gender,
-                municipality: municipality,
-                password: password,
-                confirmPassword: confirmPassword
+                firstName,
+                middleName,
+                lastName,
+                email,
+                idNumber,
+                gender,
+                municipality,
+                password
             })
         });
 
-    }catch(error){
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Registration successful!");
+
+            registerForm.reset();
+
+            window.location.href = "Login.html";
+
+        } else {
+            alert(data.message || "Registration failed!");
+        }
+
+    } catch (error) {
         console.error("Registration error:", error);
-        alert("Unable to connect to the server.");
+        alert("Unable to complete registration. Please try again.");
     }
 
 });
+
 
 function isValidEmail(email) {
 
@@ -81,6 +93,28 @@ function isValidID(idNumber) {
         return false;
     }
 
+    const year = Number(idNumber.substring(0, 2));
+    const month = Number(idNumber.substring(2, 4));
+    const day = Number(idNumber.substring(4, 6));
+
+    const currentYear = new Date().getFullYear();
+
+    const fullYear = year <= currentYear % 100
+        ? 2000 + year
+        : 1900 + year;
+
+    const birthDate = new Date(fullYear, month - 1, day);
+
+    if (
+        birthDate.getFullYear() !== fullYear ||
+        birthDate.getMonth() !== month - 1 ||
+        birthDate.getDate() !== day ||
+        birthDate > new Date()
+    ) {
+        return false;
+    }
+
+  
     let sum = 0;
     let doubleDigit = false;
 
@@ -103,6 +137,7 @@ function isValidID(idNumber) {
 
     return sum % 10 === 0;
 }
+
 
 function isValidPassword(password) {
 
