@@ -4,8 +4,6 @@ loginForm.addEventListener("submit", async function(event){
 
     event.preventDefault();
 
-    console.log("CLIKED!");
-
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
@@ -28,7 +26,14 @@ loginForm.addEventListener("submit", async function(event){
         if (response.ok){
             alert("Login Succesful!");
 
-            window.location.href = data.redirectTo;
+            window.location.href = data.redirectTo;   
+
+            if (data.role === "admin") {
+                window.location.href = "AdminDashboard.html";
+            }
+            else if (data.role === "voter") {
+                window.location.href = "UserDashboard.html";
+            }
 
         }else{
             alert(data.message || "Invalid login details");
